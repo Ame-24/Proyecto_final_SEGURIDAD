@@ -99,3 +99,46 @@ public class Main {
 
                     sistema.hacerReserva(new ReservaEspacio(cCasa, esp, fecha, horaReserva));
                     break;
+                case 5:
+                    sistema.mostrarRegistros();
+                    break;
+
+                case 6:
+                    sistema.mostrarReservas();
+                    break;
+
+                case 7:
+                    sistema.mostrarPropietarios();
+                    break;
+
+                case 8:
+                    sistema.mostrarInvitados();
+                    break;
+
+                case 9:
+                    System.out.print("Ingrese la cédula a buscar: ");
+                    String buscarCedula = sc.nextLine();
+                    if (buscarCedula.isEmpty()) {
+                        System.out.println("Debe ingresar una cédula.");
+                    } else {
+                        sistema.buscarPersonaPorCedula(buscarCedula);
+                    }
+                    break;
+
+                case 10:
+                    sistema.guardarDatos();
+                    break;
+
+                case 0:
+                    System.out.println("Gracias por usar el sistema.");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 0);
+
+        sc.close();
+    }
+}
