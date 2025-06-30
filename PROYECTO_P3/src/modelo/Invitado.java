@@ -10,5 +10,7 @@ public class Invitado {
         this.cedula = cedula;
         this.relacion = relacion;
     }
-
+    public String getNombre() { return nombre; }
+    public String getCedula() { return cedula; }
+    public String getRelacion() { return relacion; }
 }
