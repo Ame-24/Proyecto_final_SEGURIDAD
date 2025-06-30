@@ -17,4 +17,9 @@ public class ReservaEspacio {
     public String getFecha() { return fecha; }
     public String getHora() { return hora; }
 
+    @Override
+    public String toString() {
+        return "Reserva: " + espacio + " por Casa " + codigoCasa + " el " + fecha + " a las " + hora;
+    }
+
 }
