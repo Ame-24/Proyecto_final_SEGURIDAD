@@ -114,3 +114,18 @@ public class SistemaControl {
         }
         System.out.println("No se encontró ninguna persona con esa cédula.");
     }
+
+
+    public void guardarDatos() {
+        try (PrintWriter writer = new PrintWriter("reporte.txt")) {
+            writer.println("REPORTE DEL SISTEMA");
+            writer.println("Total propietarios: " + propietarios.size());
+            writer.println("Total invitados: " + invitados.size());
+            writer.println("Total registros de acceso: " + registros.size());
+            writer.println("Total reservas: " + reservas.size());
+            System.out.println("Datos guardados en 'reporte.txt'.");
+        } catch (IOException e) {
+            System.out.println("Error al guardar el reporte.");
+        }
+    }
+}
