@@ -51,3 +51,18 @@ public class Main {
                     }
                     sistema.registrarPropietario(new Propietario(codCasa, nombre, cedula, tel));
                     break;
+                case 2:
+                    System.out.print("Nombre invitado: ");
+                    String nomInv = sc.nextLine();
+                    System.out.print("Cédula invitado: ");
+                    String cedInv = sc.nextLine();
+                    System.out.print("Relación con propietario: ");
+                    String rel = sc.nextLine();
+
+                    if (nomInv.isEmpty() || cedInv.isEmpty() || rel.isEmpty()) {
+                        System.out.println("Todos los campos son obligatorios.");
+                        break;
+                    }
+
+                    sistema.registrarInvitado(new Invitado(nomInv, cedInv, rel));
+                    break;
