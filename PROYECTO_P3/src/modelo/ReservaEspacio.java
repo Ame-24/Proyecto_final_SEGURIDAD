@@ -12,5 +12,9 @@ public class ReservaEspacio {
         this.fecha = fecha;
         this.hora = hora;
     }
+    public String getCodigoCasa() { return codigoCasa; }
+    public String getEspacio() { return espacio; }
+    public String getFecha() { return fecha; }
+    public String getHora() { return hora; }
 
 }
