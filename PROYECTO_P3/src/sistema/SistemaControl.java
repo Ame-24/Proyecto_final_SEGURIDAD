@@ -76,3 +76,14 @@ public class SistemaControl {
             }
         }
     }
+
+    public void mostrarPropietarios() {
+        if (propietarios.isEmpty()) {
+            System.out.println("No hay propietarios registrados.");
+        } else {
+            System.out.println("Lista de propietarios:");
+            for (Propietario p : propietarios) {
+                System.out.println(" - " + p);
+            }
+        }
+    }
