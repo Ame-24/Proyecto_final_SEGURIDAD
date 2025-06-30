@@ -12,4 +12,9 @@ public class RegistroAcceso {
         this.accion = accion;
         this.fechaHora = fechaHora;
     }
+    @Override
+    public String toString() {
+        return tipo + ": " + cedula + " realizó " + accion + " a las " + fechaHora;
+    }
+
 }
