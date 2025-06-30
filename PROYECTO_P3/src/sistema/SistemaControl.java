@@ -32,3 +32,7 @@ public class SistemaControl {
         invitados.add(i);
         System.out.println("Invitado registrado correctamente.");
     }
+
+    public void registrarEspacio(EspacioComun e) {
+        espacios.add(e);
+    }
