@@ -36,3 +36,16 @@ public class SistemaControl {
     public void registrarEspacio(EspacioComun e) {
         espacios.add(e);
     }
+
+    public void hacerReserva(ReservaEspacio r) {
+        for (ReservaEspacio res : reservas) {
+            if (res.getEspacio().equalsIgnoreCase(r.getEspacio()) &&
+                    res.getFecha().equals(r.getFecha()) &&
+                    res.getHora().equals(r.getHora())) {
+                System.out.println("Ese espacio ya está reservado en esa fecha y hora.");
+                return;
+            }
+        }
+        reservas.add(r);
+        System.out.println("Reserva realizada correctamente.");
+    }
