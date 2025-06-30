@@ -21,3 +21,14 @@ public class SistemaControl {
         propietarios.add(p);
         System.out.println("Propietario registrado correctamente.");
     }
+
+    public void registrarInvitado(Invitado i) {
+        for (Invitado inv : invitados) {
+            if (inv.getCedula().equals(i.getCedula())) {
+                System.out.println("Ya existe un invitado con esa cédula.");
+                return;
+            }
+        }
+        invitados.add(i);
+        System.out.println("Invitado registrado correctamente.");
+    }
