@@ -87,3 +87,14 @@ public class SistemaControl {
             }
         }
     }
+
+    public void mostrarInvitados() {
+        if (invitados.isEmpty()) {
+            System.out.println("No hay invitados registrados.");
+        } else {
+            System.out.println("Lista de invitados:");
+            for (Invitado i : invitados) {
+                System.out.println(" - " + i);
+            }
+        }
+    }
