@@ -10,3 +10,14 @@ public class SistemaControl {
     private List<EspacioComun> espacios = new ArrayList<>();
     private List<ReservaEspacio> reservas = new ArrayList<>();
     private List<RegistroAcceso> registros = new ArrayList<>();
+
+    public void registrarPropietario(Propietario p) {
+        for (Propietario prop : propietarios) {
+            if (prop.getCedula().equals(p.getCedula())) {
+                System.out.println("Ya existe un propietario con esa cédula.");
+                return;
+            }
+        }
+        propietarios.add(p);
+        System.out.println("Propietario registrado correctamente.");
+    }
