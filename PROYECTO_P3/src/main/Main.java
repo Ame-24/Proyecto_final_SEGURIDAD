@@ -49,3 +49,5 @@ public class Main {
                         System.out.println("Todos los campos son obligatorios.");
                         break;
                     }
+                    sistema.registrarPropietario(new Propietario(codCasa, nombre, cedula, tel));
+                    break;
