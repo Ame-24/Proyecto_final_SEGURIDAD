@@ -82,3 +82,20 @@ public class Main {
                     String hora = new Date().toString();
                     sistema.registrarAcceso(new RegistroAcceso(cedu, tipo, accion, hora));
                     break;
+                case 4:
+                    System.out.print("Código de casa: ");
+                    String cCasa = sc.nextLine();
+                    System.out.print("Espacio: ");
+                    String esp = sc.nextLine();
+                    System.out.print("Fecha (DD/MM/AAAA): ");
+                    String fecha = sc.nextLine();
+                    System.out.print("Hora: ");
+                    String horaReserva = sc.nextLine();
+
+                    if (cCasa.isEmpty() || esp.isEmpty() || fecha.isEmpty() || horaReserva.isEmpty()) {
+                        System.out.println("Todos los campos son obligatorios.");
+                        break;
+                    }
+
+                    sistema.hacerReserva(new ReservaEspacio(cCasa, esp, fecha, horaReserva));
+                    break;
