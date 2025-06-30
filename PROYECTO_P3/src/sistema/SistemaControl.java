@@ -49,3 +49,8 @@ public class SistemaControl {
         reservas.add(r);
         System.out.println("Reserva realizada correctamente.");
     }
+
+    public void registrarAcceso(RegistroAcceso r) {
+        registros.add(r);
+        System.out.println("Acceso registrado correctamente.");
+    }
