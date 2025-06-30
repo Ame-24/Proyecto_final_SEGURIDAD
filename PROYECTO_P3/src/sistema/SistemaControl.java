@@ -65,3 +65,14 @@ public class SistemaControl {
             }
         }
     }
+
+    public void mostrarReservas() {
+        if (reservas.isEmpty()) {
+            System.out.println("No hay reservas de espacios comunes.");
+        } else {
+            System.out.println("Reservas realizadas:");
+            for (ReservaEspacio r : reservas) {
+                System.out.println(" - " + r);
+            }
+        }
+    }
