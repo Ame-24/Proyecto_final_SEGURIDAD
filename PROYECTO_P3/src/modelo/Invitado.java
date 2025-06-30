@@ -13,4 +13,9 @@ public class Invitado {
     public String getNombre() { return nombre; }
     public String getCedula() { return cedula; }
     public String getRelacion() { return relacion; }
+
+    @Override
+    public String toString() {
+        return nombre + " (Cédula: " + cedula + ", Relación: " + relacion + ")";
+    }
 }
