@@ -66,3 +66,19 @@ public class Main {
 
                     sistema.registrarInvitado(new Invitado(nomInv, cedInv, rel));
                     break;
+                case 3:
+                    System.out.print("Cédula: ");
+                    String cedu = sc.nextLine();
+                    System.out.print("Tipo (Propietario/Invitado): ");
+                    String tipo = sc.nextLine();
+                    System.out.print("Acción (Entrada/Salida): ");
+                    String accion = sc.nextLine();
+
+                    if (cedu.isEmpty() || tipo.isEmpty() || accion.isEmpty()) {
+                        System.out.println("Todos los campos son obligatorios.");
+                        break;
+                    }
+
+                    String hora = new Date().toString();
+                    sistema.registrarAcceso(new RegistroAcceso(cedu, tipo, accion, hora));
+                    break;
