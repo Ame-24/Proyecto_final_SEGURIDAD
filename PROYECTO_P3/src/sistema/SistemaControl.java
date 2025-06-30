@@ -54,3 +54,14 @@ public class SistemaControl {
         registros.add(r);
         System.out.println("Acceso registrado correctamente.");
     }
+
+    public void mostrarRegistros() {
+        if (registros.isEmpty()) {
+            System.out.println("No hay registros de acceso aún.");
+        } else {
+            System.out.println("Registros de acceso:");
+            for (RegistroAcceso r : registros) {
+                System.out.println(" - " + r);
+            }
+        }
+    }
