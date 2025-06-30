@@ -98,3 +98,19 @@ public class SistemaControl {
             }
         }
     }
+
+    public void buscarPersonaPorCedula(String cedula) {
+        for (Propietario p : propietarios) {
+            if (p.getCedula().equals(cedula)) {
+                System.out.println("Propietario encontrado: " + p);
+                return;
+            }
+        }
+        for (Invitado i : invitados) {
+            if (i.getCedula().equals(cedula)) {
+                System.out.println("Invitado encontrado: " + i);
+                return;
+            }
+        }
+        System.out.println("No se encontró ninguna persona con esa cédula.");
+    }
