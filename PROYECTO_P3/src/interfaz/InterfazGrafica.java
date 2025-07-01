@@ -119,6 +119,7 @@ public class InterfazGrafica implements Interfaz {
             mostrarError("Todos los campos son obligatorios.");
         }
     }
+
     private void registrarAcceso() {
         String ced = JOptionPane.showInputDialog("Cédula:");
         String tipo = JOptionPane.showInputDialog("Tipo (Propietario/Invitado):");

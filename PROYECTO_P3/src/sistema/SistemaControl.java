@@ -11,121 +11,87 @@ public class SistemaControl {
     private List<ReservaEspacio> reservas = new ArrayList<>();
     private List<RegistroAcceso> registros = new ArrayList<>();
 
-    public void registrarPropietario(Propietario p) {
+    public String registrarPropietario(Propietario p) {
         for (Propietario prop : propietarios) {
             if (prop.getCedula().equals(p.getCedula())) {
-                System.out.println("Ya existe un propietario con esa cédula.");
-                return;
+                return "Ya existe un propietario con esa cédula.";
             }
         }
         propietarios.add(p);
-        System.out.println("Propietario registrado correctamente.");
+        return "Propietario registrado correctamente.";
     }
 
-    public void registrarInvitado(Invitado i) {
+    public String registrarInvitado(Invitado i) {
         for (Invitado inv : invitados) {
             if (inv.getCedula().equals(i.getCedula())) {
-                System.out.println("Ya existe un invitado con esa cédula.");
-                return;
+                return "Ya existe un invitado con esa cédula.";
             }
         }
         invitados.add(i);
-        System.out.println("Invitado registrado correctamente.");
+        return "Invitado registrado correctamente.";
     }
 
     public void registrarEspacio(EspacioComun e) {
         espacios.add(e);
     }
 
-    public void hacerReserva(ReservaEspacio r) {
+    public String hacerReserva(ReservaEspacio r) {
         for (ReservaEspacio res : reservas) {
             if (res.getEspacio().equalsIgnoreCase(r.getEspacio()) &&
                     res.getFecha().equals(r.getFecha()) &&
                     res.getHora().equals(r.getHora())) {
-                System.out.println("Ese espacio ya está reservado en esa fecha y hora.");
-                return;
+                return "Ese espacio ya está reservado en esa fecha y hora.";
             }
         }
         reservas.add(r);
-        System.out.println("Reserva realizada correctamente.");
+        return "Reserva realizada correctamente.";
     }
 
-    public void registrarAcceso(RegistroAcceso r) {
+    public String registrarAcceso(RegistroAcceso r) {
         registros.add(r);
-        System.out.println("Acceso registrado correctamente.");
+        return "Acceso registrado correctamente.";
     }
 
-    public void mostrarRegistros() {
-        if (registros.isEmpty()) {
-            System.out.println("No hay registros de acceso aún.");
-        } else {
-            System.out.println("Registros de acceso:");
-            for (RegistroAcceso r : registros) {
-                System.out.println(" - " + r);
-            }
-        }
+    public List<Propietario> getPropietarios() {
+        return propietarios;
     }
 
-    public void mostrarReservas() {
-        if (reservas.isEmpty()) {
-            System.out.println("No hay reservas de espacios comunes.");
-        } else {
-            System.out.println("Reservas realizadas:");
-            for (ReservaEspacio r : reservas) {
-                System.out.println(" - " + r);
-            }
-        }
+    public List<Invitado> getInvitados() {
+        return invitados;
     }
 
-    public void mostrarPropietarios() {
-        if (propietarios.isEmpty()) {
-            System.out.println("No hay propietarios registrados.");
-        } else {
-            System.out.println("Lista de propietarios:");
-            for (Propietario p : propietarios) {
-                System.out.println(" - " + p);
-            }
-        }
+    public List<ReservaEspacio> getReservas() {
+        return reservas;
     }
 
-    public void mostrarInvitados() {
-        if (invitados.isEmpty()) {
-            System.out.println("No hay invitados registrados.");
-        } else {
-            System.out.println("Lista de invitados:");
-            for (Invitado i : invitados) {
-                System.out.println(" - " + i);
-            }
-        }
+    public List<RegistroAcceso> getRegistros() {
+        return registros;
     }
 
-    public void buscarPersonaPorCedula(String cedula) {
+    public String buscarPersonaPorCedula(String cedula) {
         for (Propietario p : propietarios) {
             if (p.getCedula().equals(cedula)) {
-                System.out.println("Propietario encontrado: " + p);
-                return;
+                return "Propietario encontrado:\n" + p;
             }
         }
         for (Invitado i : invitados) {
             if (i.getCedula().equals(cedula)) {
-                System.out.println("Invitado encontrado: " + i);
-                return;
+                return "Invitado encontrado:\n" + i;
             }
         }
-        System.out.println("No se encontró ninguna persona con esa cédula.");
+        return "No se encontró ninguna persona con esa cédula.";
     }
 
-
-    public void guardarDatos() {
+    public String guardarDatos() {
         try (PrintWriter writer = new PrintWriter("reporte.txt")) {
             writer.println("REPORTE DEL SISTEMA");
             writer.println("Total propietarios: " + propietarios.size());
             writer.println("Total invitados: " + invitados.size());
             writer.println("Total registros de acceso: " + registros.size());
             writer.println("Total reservas: " + reservas.size());
-            System.out.println("Datos guardados en 'reporte.txt'.");
+            return "Datos guardados en 'reporte.txt'.";
         } catch (IOException e) {
-            System.out.println("Error al guardar el reporte.");
+            return "Error al guardar el reporte.";
         }
     }
 }
